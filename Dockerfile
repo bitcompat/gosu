@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.4
-FROM golang:1.17-bullseye
+FROM golang:1.17-bullseye AS golang-builder
 
 ARG PACKAGE=gosu
 ARG TARGET_DIR=common
@@ -27,3 +27,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build <<EOT /bin/bash
 
     rm -rf ${PACKAGE}
 EOT
+
+FROM bitnami/minideb:bullseye as stage-0
+
+COPY --link --from=golang-builder /opt/bitnami /opt/bitnami
