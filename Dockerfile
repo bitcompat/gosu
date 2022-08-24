@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.4
-FROM golang:1.17-bullseye AS golang-builder
+FROM golang:1.17-bullseye
 
 ARG PACKAGE=gosu
 ARG TARGET_DIR=common
