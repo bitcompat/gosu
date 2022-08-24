@@ -1,0 +1,13 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_package:
+    uses: bitcompat/base/.github/workflows/build.yaml@main
+    with:
+      name: main
+    secrets: inherit
