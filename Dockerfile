@@ -3,7 +3,9 @@ FROM golang:1.17-bullseye AS golang-builder
 
 ARG PACKAGE=gosu
 ARG TARGET_DIR=common
+# renovate: datasource=github-releases depName=tianon/gosu
 ARG VERSION=1.14.0
+# renovate: datasource=github-releases depName=tianon/gosu
 ARG REF=1.14
 ARG CGO_ENABLED=0
 
