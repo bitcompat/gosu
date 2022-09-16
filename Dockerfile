@@ -23,6 +23,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build <<EOT /bin/bash
     mkdir -p /opt/bitnami/${TARGET_DIR}/licenses
     mkdir -p /opt/bitnami/${TARGET_DIR}/bin
     cp -f LICENSE /opt/bitnami/${TARGET_DIR}/licenses/${PACKAGE}-${VERSION}.txt
+    echo "gosu-${VERSION},GPL3,https://github.com/tianon/gosu/archive/${REF}.tar.gz" > /opt/bitnami/common/licenses/gpl-source-links.txt
     cp -f ${PACKAGE} /opt/bitnami/${TARGET_DIR}/bin/gosu
     popd
 
