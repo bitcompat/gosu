@@ -3,8 +3,9 @@ FROM golang:1.20-bullseye AS golang-builder
 
 ARG PACKAGE=gosu
 ARG TARGET_DIR=common
-# renovate: datasource=github-releases depName=tianon/gosu
-ARG VERSION=1.14.0
+# renovate: datasource=github-releases depName=tianon/gosu versioning=regex:^(?<major>\d+)(\.(?<minor>\d+))$ extractVersion=^(?<version>\d+\.\d+)
+ARG VERSION=1.14
+# renovate: datasource=github-releases depName=tianon/gosu versioning=regex:^(?<major>\d+)(\.(?<minor>\d+))$ extractVersion=^(?<version>\d+\.\d+)
 ARG REF=1.14
 ARG CGO_ENABLED=0
 
@@ -22,8 +23,8 @@ RUN --mount=type=cache,target=/root/.cache/go-build <<EOT /bin/bash
 
     mkdir -p /opt/bitnami/${TARGET_DIR}/licenses
     mkdir -p /opt/bitnami/${TARGET_DIR}/bin
-    cp -f LICENSE /opt/bitnami/${TARGET_DIR}/licenses/${PACKAGE}-${VERSION}.txt
-    echo "gosu-${VERSION},GPL3,https://github.com/tianon/gosu/archive/${REF}.tar.gz" > /opt/bitnami/common/licenses/gpl-source-links.txt
+    cp -f LICENSE /opt/bitnami/${TARGET_DIR}/licenses/${PACKAGE}-${VERSION}.0.txt
+    echo "gosu-${VERSION}.0,GPL3,https://github.com/tianon/gosu/archive/${REF}.tar.gz" > /opt/bitnami/common/licenses/gpl-source-links.txt
     cp -f ${PACKAGE} /opt/bitnami/${TARGET_DIR}/bin/gosu
     popd
 

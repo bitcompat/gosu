@@ -12,9 +12,9 @@ jobs:
       name: main
       image_tag: |
         latest
-        1.16.0-bullseye-r1 # renovate: datasource=github-releases depName=tianon/gosu
-        1.16.0-bullseye # renovate: datasource=github-releases depName=tianon/gosu
-        1.16.0 # renovate: datasource=github-releases depName=tianon/gosu
-        1.16
-        1
+        1.16.0-bullseye-r1 # renovate: datasource=github-releases depName=tianon/gosu versioning=regex:^(?<major>\d+)(\.(?<minor>\d+)) extractVersion=^(?<version>\d+\.\d+)
+        1.16.0-bullseye # renovate: datasource=github-releases depName=tianon/gosu versioning=regex:^(?<major>\d+)(\.(?<minor>\d+)) extractVersion=^(?<version>\d+\.\d+)
+        1.16.0 # renovate: datasource=github-releases depName=tianon/gosu versioning=regex:^(?<major>\d+)(\.(?<minor>\d+)) extractVersion=^(?<version>\d+\.\d+)
+        1.16 # renovate: datasource=github-releases depName=tianon/gosu versioning=regex:^(?<major>\d+)(\.(?<minor>\d+))$ extractVersion=^(?<version>\d+\.\d+)
+        1 # renovate: datasource=github-releases depName=tianon/gosu versioning=regex:^(?<major>\d+)$ extractVersion=^(?<version>\d+\.\d+)
     secrets: inherit
