@@ -10,11 +10,8 @@ jobs:
     uses: bitcompat/base/.github/workflows/build.yaml@main
     with:
       name: main
-      image_tag: |
-        latest
-        1.16.0-bullseye-r1 # renovate: datasource=github-releases depName=tianon/gosu versioning=regex:^(?<major>\d+)(\.(?<minor>\d+)) extractVersion=^(?<version>\d+\.\d+)
-        1.16.0-bullseye # renovate: datasource=github-releases depName=tianon/gosu versioning=regex:^(?<major>\d+)(\.(?<minor>\d+)) extractVersion=^(?<version>\d+\.\d+)
-        1.16.0 # renovate: datasource=github-releases depName=tianon/gosu versioning=regex:^(?<major>\d+)(\.(?<minor>\d+)) extractVersion=^(?<version>\d+\.\d+)
-        1.16 # renovate: datasource=github-releases depName=tianon/gosu versioning=regex:^(?<major>\d+)(\.(?<minor>\d+))$ extractVersion=^(?<version>\d+\.\d+)
-        1 # renovate: datasource=github-releases depName=tianon/gosu versioning=regex:^(?<major>\d+)$ extractVersion=^(?<version>\d+\.\d+)
+      version: 1.16.0 # renovate: datasource=github-releases depName=tianon/gosu versioning=regex:^(?<major>\d+)(\.(?<minor>\d+)) extractVersion=^(?<version>\d+\.\d+)
+      revision: '2'
+      latest: true
+      major_only_tag: true
     secrets: inherit
