@@ -11,7 +11,8 @@ jobs:
     with:
       name: main
       version: 1.16.0 # renovate: datasource=github-releases depName=tianon/gosu versioning=regex:^(?<major>\d+)(\.(?<minor>\d+)) extractVersion=^(?<version>\d+\.\d+)
-      revision: '2'
+      revision: '1'
       latest: true
       major_only_tag: true
+      debian_codename: bookworm
     secrets: inherit
