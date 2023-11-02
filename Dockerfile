@@ -4,7 +4,7 @@ FROM golang:1.21-bookworm AS golang-builder
 ARG PACKAGE=gosu
 ARG TARGET_DIR=common
 # renovate: datasource=github-releases depName=tianon/gosu versioning=regex:^(?<major>\d+)(\.(?<minor>\d+))$ extractVersion=^(?<version>\d+\.\d+)
-ARG BUILD_VERSION=1.16
+ARG BUILD_VERSION=1.17
 ARG CGO_ENABLED=0
 
 RUN mkdir -p /opt/bitnami
