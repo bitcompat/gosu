@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.6
-FROM golang:1.21-bookworm AS golang-builder
+FROM golang:1.22-bookworm AS golang-builder
 
 ARG PACKAGE=gosu
 ARG TARGET_DIR=common
