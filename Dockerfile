@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1.6
+# syntax=docker/dockerfile:1.17
 FROM golang:1.23-bookworm AS golang-builder
 
 ARG PACKAGE=gosu
